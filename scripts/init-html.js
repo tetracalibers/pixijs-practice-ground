@@ -1,11 +1,12 @@
 // @ts-check
 
 import fs from "fs-extra"
+import path from "path"
 
 const title = process.argv[2]
 
-const dir = title
-await fs.mkdir(dir)
+const dir = path.join(process.cwd(), "examples", title)
+await fs.mkdir(dir, { recursive: true })
 await fs.writeFile(dir + "/index.js", "")
 
 await fs.writeFile(
@@ -25,11 +26,7 @@ await fs.writeFile(
         }
       </style>
     </head>
-    <body>
-      <canvas id="pixi-canvas">
-        Your browser does not support the HTML5 canvas Element.
-      </canvas>
-    </body>
+    <body></body>
   </html>
-`.trimStart()
+`.trim()
 )
