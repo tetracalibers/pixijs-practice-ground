@@ -1,17 +1,16 @@
 {
   "name": "pixijs-practice-ground",
-  "type": "module",
   "private": true,
   "scripts": {
     "dev": "node server.js",
-    "init": "node scripts/init-html.js",
+    "new:canvas": "node scripts/init-html.js",
     "compile:ts": "tsc --target es2022 --outDir common/js/dist -d common/ts/index.ts",
     "format": "prettier . --write"
   },
   "devDependencies": {
     "connect": "^3.7.0",
     "fs-extra": "^11.1.1",
-    "glob": "^10.2.3",
+    "glob": "^8.1.0",
     "prettier": "^2.8.8",
     "serve-static": "^1.15.0"
   },
